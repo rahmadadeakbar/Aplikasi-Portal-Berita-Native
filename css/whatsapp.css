@@ -1,0 +1,48 @@
+/*Tombol Chat WhatsApp*/
+.fixed-whatsapp{
+    position:fixed;
+    bottom:0px;
+    right:20px;
+    width:50px;
+    height:50px;
+    z-index:9999
+}
+
+.fixed-whatsapp:before{
+    content:"";
+    background-repeat:no-repeat;
+    background-size:25px 25px;
+    background-position:center center;
+    width:40px;
+    height:40px;
+    background-image:url("https://lh3.googleusercontent.com/HNWr_B1eZgcsddPGiF6qrKlBzTna6k-j4m2qEoG9VxKniEqtyVtWM80Z1XChZEx12Bv6");background-color:#edfd5c;
+    position:absolute;
+    top:0;
+    left:0;
+    border-radius:100%;
+    box-shadow:0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24)}
+
+.fixed-whatsapp:after{
+    content:"Hallo sahabat asyik, konsultasi dengan admin di sini yah!";
+	width:250px;
+	padding:10px 10px;
+	position:absolute;
+	bottom:20%;
+    margin-bottom: 0px;
+    right: 100px;
+    left: -260px;
+	text-align:right;
+    color:black;
+    border:1px solid white;
+    background:white;
+    border-radius:4px;
+    opacity:0;
+    transition:all .4s ease-in-out;
+    font-size:90%;
+    line-height:1.1
+}
+
+.fixed-whatsapp:hover:after{
+    opacity:1;
+    right:0
+}

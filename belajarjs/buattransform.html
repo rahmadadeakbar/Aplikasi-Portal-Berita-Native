@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSFORMER</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
+
+    <center>
+        <h2>BUAT TRANSFORMER DENGAN JAVASCRIPT</h2>
+
+        <button class="btn btn-primary" onclick="document.getElementById('myGif').src='../img/motor.gif'">BERUBAH MOTOR</button>
+
+        <img id="myGif" src="../img/transformer.gif" alt="" width="500px">
+        
+        <button class="btn btn-success" onclick="document.getElementById('myGif').src='../img/mobil.gif'">BERUBAH MOBIL</button>
+
+        <button class="btn btn-danger" onclick="coba()">KLIK</button>
+    </center>
+
+    <script src="../js/bootstrap.js"></script>
+    <script>
+       function coba() {
+           var a=10;
+           var b=20;
+           alert(a+b*a);
+       }
+    </script>
+</body>
+</html>
