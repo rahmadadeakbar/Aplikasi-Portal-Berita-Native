@@ -50,7 +50,7 @@
     <h1>Menampilkan looping kali 2 +1</h1>
     <?php 
         $nilai=1;
-        for ($i=4; $i <=128 ;$i*=2) { 
+        for ($i=1; $i <=128 ;$i*=2) { 
             # code...
             echo"".$i-$nilai;
         }
