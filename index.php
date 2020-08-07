@@ -1,24 +1,25 @@
 <html>
-    <head>
-        <title>BELAJAR BOOTSTRAP</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="vendor/fontawesome/css/fontawesome.css">
-        <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
-        <link rel="stylesheet" href="css/whatsapp.css">
-        <style>
-          footer{
-            background-color: #3d7071;
-            /* position: relative;
+
+<head>
+  <title>BELAJAR BOOTSTRAP</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="vendor/fontawesome/css/fontawesome.css">
+  <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
+  <link rel="stylesheet" href="css/whatsapp.css">
+  <style>
+    footer {
+      background-color: #3d7071;
+      /* position: relative;
             margin-top: 100%; */
-            color: white;
-          }
+      color: white;
+    }
 
-          footer ul li a{
-            text-decoration: none;
-            color: white;
-          }
+    footer ul li a {
+      text-decoration: none;
+      color: white;
+    }
 
-          /* .row .berita1{
+    /* .row .berita1{
             background-color: #e6d38b;
             padding-left: 33px;
             padding-top: 14px;
@@ -40,64 +41,64 @@
             text-align: justify;
             color: white;
           } */
+  </style>
+</head>
 
-        </style>
-    </head>
 <body>
 
- 
-  <div class="">  
+
+  <div class="">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: cadetblue; padding:16px;">
-        <a class="navbar-brand" href="#">WEB BERITA</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand" href="#">WEB BERITA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"><i class="fa fa-home"></i> HOME <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-newspaper"></i> NEWS</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-utensils"></i> FOOD
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">RESEP</a>
-                <a class="dropdown-item" href="#">FOOD NEWS</a>
-                
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-hammer"></i> PROPERTI
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">NEWS</a>
-                <a class="dropdown-item" href="#">HUNIAN</a>
-                <a class="dropdown-item" href="#">ARSITEKTUR</a>
-                
-              </div>
-            </li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-          </ul>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"><i class="fa fa-home"></i> HOME <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa fa-newspaper"></i> NEWS</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-utensils"></i> FOOD
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">RESEP</a>
+              <a class="dropdown-item" href="#">FOOD NEWS</a>
 
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-hammer"></i> PROPERTI
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">NEWS</a>
+              <a class="dropdown-item" href="#">HUNIAN</a>
+              <a class="dropdown-item" href="#">ARSITEKTUR</a>
 
-          <ul class="nav justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link active" href="#" style="color: white;"><i class="fa fa-sign-in-alt"></i> LOGIN</a>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </li>
+
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" href="admin/login.php" style="color: white;"><i class="fa fa-sign-in-alt"></i> LOGIN</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <br>
     <br>
@@ -138,7 +139,7 @@
       <br>
       <br>
 
-      
+
 
       <!-- content -->
       <div class="row">
@@ -197,7 +198,7 @@
     </div>
     <br>
     <br>
-    
+
     <!-- Footer -->
     <footer class="page-footer font-small indigo">
       <!-- Footer Links -->
@@ -306,9 +307,10 @@
 
   </div>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="vendor/fontawesome/js/fontawesome.js"></script>
-    <script src="vendor/fontawesome/js/all.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="vendor/fontawesome/js/fontawesome.js"></script>
+  <script src="vendor/fontawesome/js/all.js"></script>
 </body>
+
 </html>

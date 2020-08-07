@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="vendors/css/vendor.bundle.addons.css">
     <!-- endinject -->
-    <!-- plugin css for this page -->
-    <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- endinject -->
@@ -33,7 +31,7 @@
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center">
                 <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="#" class="nav-link">Schedule
                             <span class="badge badge-primary ml-1">New</span>
                         </a>
@@ -45,10 +43,10 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="mdi mdi-bookmark-plus-outline"></i>Score</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <ul class="navbar-nav navbar-nav-right">
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                             <i class="mdi mdi-file-document-box"></i>
                             <span class="count">7</span>
@@ -102,7 +100,7 @@
                                 </div>
                             </a>
                         </div>
-                    </li>
+                    </li> -->
                     <li class="nav-item dropdown">
                         <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                             <i class="mdi mdi-bell"></i>
@@ -183,9 +181,7 @@
                             <a class="dropdown-item">
                                 Change Password
                             </a>
-                            <a class="dropdown-item">
-                                Check Inbox
-                            </a>
+
                             <a class="dropdown-item">
                                 Sign Out
                             </a>
@@ -216,7 +212,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-success btn-block">New Project
+                            <button class="btn btn-success btn-block">New Post
                                 <i class="mdi mdi-plus"></i>
                             </button>
                         </div>
