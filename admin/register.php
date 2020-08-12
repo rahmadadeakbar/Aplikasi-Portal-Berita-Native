@@ -32,7 +32,7 @@
               <form action="proses/proses_regis.php" method="POST">
                 <div class="form-group">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Username" name="username">
+                    <input type="text" class="form-control" placeholder="Username" name="username" required>
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
@@ -43,7 +43,7 @@
 
                 <div class="form-group">
                   <div class="input-group">
-                    <input type="password" class="form-control" placeholder="Password" name="pass">
+                    <input type="password" class="form-control" placeholder="Password" name="pass" required>
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
@@ -65,7 +65,7 @@
 
                 <div class="form-group">
                   <div class="input-group">
-                    <input type="email" class="form-control" placeholder="email@email" name="email">
+                    <input type="email" class="form-control" placeholder="email@email" name="email" required>
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
@@ -76,7 +76,7 @@
 
                 <div class="form-group">
                   <div class="input-group">
-                    <input type="number" class="form-control" placeholder="0823xxxxx" name="nohp">
+                    <input type="number" class="form-control" placeholder="0823xxxxx" name="nohp" required>
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
