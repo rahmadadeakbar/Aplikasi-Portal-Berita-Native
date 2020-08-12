@@ -11,6 +11,8 @@ if (isset($_POST['regis'])) {
 
     $query_input = mysqli_query($koneksi, "INSERT INTO user VALUES(md5('$id'),'$username','$email',md5('$password'),'$nohp','$ps','$level')");
 
+
+
     if ($query_input) {
         echo '<script>alert("data berhasil di input")
                 window.location.href="../login.php";
