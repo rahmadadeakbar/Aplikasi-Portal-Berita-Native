@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'proses/koneksi.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +18,8 @@ session_start();
     <!-- endinject -->
     <!-- inject:css -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- datatable -->
+    <link rel="stylesheet" href="vendors/datatables.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon.png" />
 </head>

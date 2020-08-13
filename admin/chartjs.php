@@ -1,4 +1,9 @@
-<?php include 'header.php' ?>
+<?php include 'header.php'; ?>
+
+<?php
+if ($_SESSION['level'] = '') {
+  header("location:login.php");
+} ?>
 <!-- partial -->
 <div class="main-panel">
   <div class="content-wrapper">
