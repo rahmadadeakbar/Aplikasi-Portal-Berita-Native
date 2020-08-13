@@ -19,7 +19,7 @@ include 'proses/koneksi.php';
     <!-- inject:css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- datatable -->
-    <link rel="stylesheet" href="vendors/datatables.css">
+    <link rel="stylesheet" type="text/css" href="vendors/datatables/DataTables/css/jquery.dataTables.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon.png" />
 </head>

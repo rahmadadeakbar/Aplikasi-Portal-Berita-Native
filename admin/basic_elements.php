@@ -55,7 +55,7 @@
               <code>.table-striped</code>
             </p>
             <div class="table-responsive">
-              <table class="table table-striped">
+              <table class="table table-striped table-bordered data">
                 <thead>
                   <tr>
                     <th>No</th>
@@ -82,7 +82,11 @@
                         <td><?php echo $data['email']; ?></td>
                         <td><?php echo $data['no_hp']; ?></td>
                         <td><?php echo $data['level']; ?></td>
-                        <td></td>
+                        <td>
+                          <a href="" class="btn btn-warning">Edit</a>
+                          <a href="" class="btn btn-info">View</a>
+                          <a href="" class="btn btn-danger">Hapus</a>
+                        </td>
                       </tr>
                   <?php
                       $no++;
