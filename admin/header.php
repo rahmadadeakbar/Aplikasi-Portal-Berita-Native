@@ -16,10 +16,10 @@ include 'proses/koneksi.php';
     <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="vendors/css/vendor.bundle.addons.css">
     <!-- endinject -->
+    <!-- datatable -->
+    <link rel="stylesheet" href="vendors/datatables/DataTables/css/jquery.dataTables.css">
     <!-- inject:css -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- datatable -->
-    <link rel="stylesheet" type="text/css" href="vendors/datatables/DataTables/css/jquery.dataTables.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon.png" />
     <style>

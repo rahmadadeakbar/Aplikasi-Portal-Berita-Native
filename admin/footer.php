@@ -5,7 +5,7 @@
 <!-- container-scroller -->
 
 <!-- plugins:js -->
-<script src="../js/jquery.js"></script>
+<script src="vendors/datatables/DataTables/js/jquery.js"></script>
 <script src="vendors/js/vendor.bundle.base.js"></script>
 <script src="vendors/js/vendor.bundle.addons.js"></script>
 <!-- datatables -->
