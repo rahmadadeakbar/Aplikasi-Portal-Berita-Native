@@ -10,7 +10,7 @@ include 'proses/koneksi.php';
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Star Admin Free Bootstrap Admin Dashboard Template</title>
+    <title>PORTAL BERITA | WEB BLK BANDA ACEH</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
@@ -22,6 +22,17 @@ include 'proses/koneksi.php';
     <link rel="stylesheet" type="text/css" href="vendors/datatables/DataTables/css/jquery.dataTables.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon.png" />
+    <style>
+        .navbar.default-layout .navbar-brand-wrapper .navbar-brand {
+            color: #163f73;
+            font-size: 1.5rem;
+            line-height: 48px;
+            margin-right: 0;
+            padding: 0.25rem 0;
+            display: -webkit-flex;
+            display: flex;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,16 +40,14 @@ include 'proses/koneksi.php';
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-                <a class="navbar-brand brand-logo" href="index.html">
-                    <img src="images/logo.svg" alt="logo" />
-                </a>
-                <a class="navbar-brand brand-logo-mini" href="index.html">
-                    <img src="images/logo-mini.svg" alt="logo" />
+                <a class="navbar-brand brand-logo" href="index.php">
+                    <!-- <img src="images/logo.svg" alt="logo" /> -->
+                    <b>PORTAL BERITA</b>
                 </a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center">
                 <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a href="#" class="nav-link">Schedule
                             <span class="badge badge-primary ml-1">New</span>
                         </a>
@@ -50,7 +59,7 @@ include 'proses/koneksi.php';
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="mdi mdi-bookmark-plus-outline"></i>Score</a>
-                    </li> -->
+                    </li>
                 </ul>
                 <ul class="navbar-nav navbar-nav-right">
                     <!-- <li class="nav-item dropdown">
@@ -234,24 +243,27 @@ include 'proses/koneksi.php';
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                                 <i class="menu-icon mdi mdi-content-copy"></i>
-                                <span class="menu-title">Basic UI Elements</span>
+                                <span class="menu-title">Data Master</span>
                                 <i class="menu-arrow"></i>
                             </a>
                             <div class="collapse" id="ui-basic">
                                 <ul class="nav flex-column sub-menu">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="buttons.php">Buttons</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="typography.php">Typography</a>
+                                        <a class="nav-link" href="buttons.php">Kategori</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="data_user.php">
+                                <i class="menu-icon mdi mdi-backup-restore"></i>
+                                <span class="menu-title">Data User</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="basic_elements.php">
                                 <i class="menu-icon mdi mdi-backup-restore"></i>
-                                <span class="menu-title">Form elements</span>
+                                <span class="menu-title">Data Biodata User</span>
                             </a>
                         </li>
 

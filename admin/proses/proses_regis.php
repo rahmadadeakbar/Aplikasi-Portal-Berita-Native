@@ -22,4 +22,6 @@ if (isset($_POST['regis'])) {
                 window.location.href="../register.php";
             </script>';
     }
+} else {
+    echo '<script>window.history.back()</script>';
 }

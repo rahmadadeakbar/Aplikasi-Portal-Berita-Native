@@ -1,4 +1,8 @@
 <?php include 'header.php' ?>
+
+<?php if ($_SESSION['level'] == null) {
+  header('location="login.php"');
+} ?>
 <!-- partial -->
 <div class="main-panel">
   <div class="content-wrapper">
@@ -11,21 +15,22 @@
               Masukkan Data User
             </p>
             <form class="forms-sample" action="proses/input_user.php" method="POST">
+              <input type="hidden" name="id" value="">
               <div class="form-group">
                 <label for="exampleInputName1">Username</label>
-                <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="username" required>
+                <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="username" value="" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputName1">Password</label>
-                <input type="password" class="form-control" id="exampleInputName1" placeholder="Password" name="password" required>
+                <input type="password" class="form-control" id="exampleInputName1" placeholder="Password" value="" name="password" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail3">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" name="email" required>
+                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" name="email" value="" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail3">No HP</label>
-                <input type="number" class="form-control" id="exampleInputEmail3" placeholder="Email" name="nohp" required>
+                <input type="number" class="form-control" id="exampleInputEmail3" placeholder="Email" name="nohp" value="" required>
               </div>
 
 
@@ -83,9 +88,9 @@
                         <td><?php echo $data['no_hp']; ?></td>
                         <td><?php echo $data['level']; ?></td>
                         <td>
-                          <a href="" class="btn btn-warning">Edit</a>
+                          <a href="edit_user.php?id=<?php echo $data['id_user'] ?>" class="btn btn-warning">Edit</a>
                           <a href="" class="btn btn-info">View</a>
-                          <a href="" class="btn btn-danger">Hapus</a>
+                          <a href="proses/proses_hapus.php?id=<?php echo $data['id_user'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')" class="btn btn-danger">Hapus</a>
                         </td>
                       </tr>
                   <?php

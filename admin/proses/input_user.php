@@ -12,7 +12,14 @@ if (isset($_POST['input_user'])) {
 
     if ($query_input) {
         echo '<script>alert("data user berhasil diinput")
-                window.location.href="../basic_elements.php";
+                window.location.href="../data_user.php";
+            </script>';
+    } else {
+
+        echo '<script>alert("data user Gagal diinput")
+        window.location.href="../data_user.php";
             </script>';
     }
+} else {
+    echo '<script>window.history.back()</script>';
 }
