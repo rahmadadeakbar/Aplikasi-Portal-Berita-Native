@@ -249,7 +249,7 @@ include 'proses/koneksi.php';
                             <div class="collapse" id="ui-basic">
                                 <ul class="nav flex-column sub-menu">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="buttons.php">Kategori</a>
+                                        <a class="nav-link" href="kategori.php">Kategori</a>
                                     </li>
                                 </ul>
                             </div>
