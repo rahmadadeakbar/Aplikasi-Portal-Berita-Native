@@ -10,18 +10,19 @@ function tambah($koneksi)
     $kategori = $_POST['nama_kategori'];
 
     if (!empty($kategori)) {
-      $query_input = "INSERT INTO kategori VALUES(md5('$id'),'$kategori')";
-      $simpan = mysqli_query($koneksi, $query_input);
-      if ($simpan && isset($_GET['aksi'])) {
-        if ($_GET['aksi'] == 'create') {
-          echo '<script>alert("data berhasil di input");
-            window.location.href="kategori.php";
-            window.history.back();
-          </script>';
-        }
+      $query_input = mysqli_query($koneksi, "INSERT INTO kategori VALUES(md5('$id'),'$kategori')");
+      if ($query_input) {
+
+        echo '<script>alert("data berhasil di input")
+        window.location.href="kategori.php";
+        window.history.back();
+       
+      </script>';
+      } else {
+        echo '<script>alert("data gagal di input")
+        window.location.href="kategori.php";
+      </script>';
       }
-    } else {
-      echo '<script>alert("data gagal disimpan")</script>';
     }
   }
 ?>
@@ -199,7 +200,7 @@ function hapus($koneksi)
 // logika proses aksinya
 if (isset($_GET['aksi'])) {
   switch ($_GET['aksi']) {
-    case 'create':
+    case "create":
       tambah($koneksi);
       tampil_data($koneksi);
       break;

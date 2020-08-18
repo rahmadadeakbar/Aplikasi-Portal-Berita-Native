@@ -261,7 +261,7 @@ include 'proses/koneksi.php';
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="basic_elements.php">
+                            <a class="nav-link" href="biodata_user.php">
                                 <i class="menu-icon mdi mdi-backup-restore"></i>
                                 <span class="menu-title">Data Biodata User</span>
                             </a>
