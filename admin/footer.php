@@ -26,6 +26,3 @@
         $('.data').DataTable();
     });
 </script>
-</body>
-
-</html>

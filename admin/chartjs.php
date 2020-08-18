@@ -76,3 +76,7 @@ if ($_SESSION['level'] = '') {
   <!-- partial -->
 </div>
 <?php include 'footer.php' ?>
+
+</body>
+
+</html>
