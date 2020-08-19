@@ -3,6 +3,12 @@ session_start();
 include 'proses/koneksi.php';
 ?>
 
+<?php
+if ($_SESSION['level'] != ("admin" || "operator" || "autor") || empty($_SESSION['level'])) {
+    header('location:login.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +26,8 @@ include 'proses/koneksi.php';
     <link rel="stylesheet" href="vendors/datatables/DataTables/css/jquery.dataTables.css">
     <!-- inject:css -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="vendors/summernote/dist/summernote.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon.png" />
     <style>
@@ -228,9 +236,9 @@ include 'proses/koneksi.php';
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-success btn-block">New Post
+                            <a href="posting.php" class="btn btn-success btn-block">New Post
                                 <i class="mdi mdi-plus"></i>
-                            </button>
+                            </a>
                         </div>
                     </li>
                     <?php if ($_SESSION['level'] == 'admin') { ?>
@@ -270,22 +278,24 @@ include 'proses/koneksi.php';
                     <?php } else if ($_SESSION['level'] == 'operator') { ?>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="chartjs.php">
-                                <i class="menu-icon mdi mdi-chart-line"></i>
-                                <span class="menu-title">Charts</span>
+                            <a class="nav-link" href="index.php">
+                                <i class="menu-icon mdi mdi-television"></i>
+                                <span class="menu-title">Dashboard</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="basic-table.php">
-                                <i class="menu-icon mdi mdi-table"></i>
-                                <span class="menu-title">Tables</span>
+                            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                                <i class="menu-icon mdi mdi-content-copy"></i>
+                                <span class="menu-title">Data Master</span>
+                                <i class="menu-arrow"></i>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="font-awesome.php">
-                                <i class="menu-icon mdi mdi-sticker"></i>
-                                <span class="menu-title">Icons</span>
-                            </a>
+                            <div class="collapse" id="ui-basic">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="kategori.php">Kategori</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
 
                     <?php } else if ($_SESSION['level'] == 'autor') { ?>

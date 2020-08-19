@@ -5,6 +5,7 @@
 <!-- container-scroller -->
 
 <!-- plugins:js -->
+<script src="../js/jquery.js"></script>
 <script src="vendors/datatables/DataTables/js/jquery.js"></script>
 <script src="vendors/js/vendor.bundle.base.js"></script>
 <script src="vendors/js/vendor.bundle.addons.js"></script>
@@ -20,6 +21,7 @@
 <!-- Custom js for this page-->
 <script src="js/dashboard.js"></script>
 <!-- End custom js for this page-->
+<script src="vendors/summernote/dist/summernote.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
