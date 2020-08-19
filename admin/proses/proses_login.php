@@ -25,6 +25,7 @@ if (isset($_POST['login'])) {
         } elseif ($data['level'] == 'operator') {
             $_SESSION['username'] = $data['username'];
             $_SESSION['level'] = $data['level'];
+            $_SESSION['id_user'] = $data['id_user'];
 
             echo "<script> alert('Selamat Datang Operator')
                     window.location.href='../index.php';
@@ -32,6 +33,7 @@ if (isset($_POST['login'])) {
         } elseif ($data['level'] == 'autor') {
             $_SESSION['username'] = $data['username'];
             $_SESSION['level'] = $data['level'];
+            $_SESSION['id_user'] = $data['id_user'];
 
             echo "<script> alert('Selamat Datang Autor')
                     window.location.href='../index.php';

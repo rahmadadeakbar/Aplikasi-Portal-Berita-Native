@@ -1,3 +1,4 @@
+<?php include 'admin/proses/koneksi.php'; ?>
 <html>
 
 <head>
@@ -143,42 +144,26 @@
 
       <!-- content -->
       <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-header">
-              Featured
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-header">
-              Featured
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+        <?php
+        $query_show = mysqli_query($koneksi, "SELECT * FROM postingan p LEFT JOIN user u on p.id_user=u.id_user WHERE p.id_user=u.id_user");
+        while ($data = mysqli_fetch_array($query_show)) {
+          # code...
+
+        ?>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                <?php echo $data['username'] ?>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $data['judul'] ?></h5>
+                <p class="card-text"><?php echo $data['kontent'] ?></p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-header">
-              Featured
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
+        <?php } ?>
+
       </div>
       <!-- tutup content -->
       <br>

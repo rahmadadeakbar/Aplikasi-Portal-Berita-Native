@@ -138,7 +138,7 @@ function tambah($koneksi)
                                                     </td>
 
                                                     <td>
-                                                        <a href="biodata_user.php?aksi=update&id=<?php echo $data['id_kategori']; ?>&nama_kategori=<?php echo $data['nama_kategori']; ?>" class="btn btn-warning">Edit</a>
+                                                        <a href="biodata_user.php?aksi=update&id=<?php echo $data['id_biodata']; ?>&nama=<?php echo $data['nama_kategori']; ?>" class="btn btn-warning">Edit</a>
                                                         <a href="biodata_user.php?aksi=delete&id=<?php echo $data['id_biodata']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')" class="btn btn-danger">Hapus</a>
                                                     </td>
                                                 </tr>
