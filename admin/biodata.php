@@ -5,7 +5,7 @@ function tambah($koneksi)
 {
     if (isset($_POST['input_biodata'])) {
         $id = uniqid();
-        $id_user = $_POST['id_user'];
+        $id_user = $_SESSION['id_user'];
         $nama = $_POST['nama_user'];
         $tpt_lahir = $_POST['tempat_lahir'];
         $tanggal = $_POST['tgl_lahir'];
@@ -23,13 +23,13 @@ function tambah($koneksi)
 
         if ($query_input) {
             echo '<script>alert("data berhasil di input")
-            window.location.href="biodata_user.php";
+            window.location.href="biodata.php";
             window.history.back();
            
           </script>';
         } else {
             echo '<script>alert("data gagal di input")
-            window.location.href="kategori.php";
+            window.location.href="biodata.php";
           </script>';
         }
     }
@@ -132,8 +132,8 @@ function tambah($koneksi)
                                                     </td>
 
                                                     <td>
-                                                        <a href="biodata_user.php?aksi=update&id=<?php echo $data['id_biodata']; ?>&nama=<?php echo $data['nama_kategori']; ?>" class="btn btn-warning">Edit</a>
-                                                        <a href="biodata_user.php?aksi=delete&id=<?php echo $data['id_biodata']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')" class="btn btn-danger">Hapus</a>
+                                                        <a href="biodata.php?aksi=update&id=<?php echo $data['id_biodata']; ?>&nama=<?php echo $data['nama_kategori']; ?>" class="btn btn-warning">Edit</a>
+                                                        <a href="biodata.php?aksi=delete&id=<?php echo $data['id_biodata']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')" class="btn btn-danger">Hapus</a>
                                                     </td>
                                                 </tr>
                                             <?php
@@ -181,7 +181,7 @@ function hapus($koneksi)
         if ($query_hapus) {
             if ($_GET['aksi'] == 'delete') {
                 echo '<script>alert("Data Berhasil dihapus")
-          window.location.href="biodata_user.php";
+          window.location.href="biodata.php";
         </script>';
             }
         } else {

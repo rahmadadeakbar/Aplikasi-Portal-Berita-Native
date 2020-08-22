@@ -22,13 +22,13 @@ function tambah($koneksi)
 
         if ($query_input) {
             echo '<script>alert("data berhasil di input")
-            window.location.href="posting.php";
+            window.location.href="postingan_autor.php";
             window.history.back();
            
           </script>';
         } else {
             echo '<script>alert("data gagal di input")
-            window.location.href="posting.php";
+            window.location.href="postingan_autor.php";
           </script>';
         }
     }
@@ -61,7 +61,7 @@ function tambah($koneksi)
                                 </div>
 
                                 <div class="form-group">
-                                    <textarea id="content" name="konten"></textarea>
+                                    <textarea id="content" class="form-control" name="konten"></textarea>
                                 </div>
 
                                 <button type="submit" class="btn btn-success mr-2" type="submit" name="input_konten">Posting</button>
@@ -196,6 +196,7 @@ if (isset($_GET['aksi'])) {
 
 ?>
 <?php include 'footer.php'; ?>
+
 <script type="text/javascript">
     $(document).ready(function() {
         $('#content').summernote({
