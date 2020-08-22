@@ -43,20 +43,13 @@ function tambah($koneksi)
                 <div class="col-md-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Form Data Kategori</h4>
+                            <h4 class="card-title">Form Data User</h4>
                             <p class="card-description">
-                                Masukkan Kategori
+                                Masukkan Data User
                             </p>
 
                             <form class="forms-sample" action="" method="POST" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <label for="exampleFormControlSelect1">Pilih User</label>
-                                    <select class="form-control form-control-lg" id="exampleFormControlSelect1" name="id_user">
-                                        <option value="admin">Admin</option>
-                                        <option value="operator">Operator</option>
-                                        <option value="autor">Autor</option>
-                                    </select>
-                                </div>
+
 
                                 <div class="form-group">
                                     <label for="exampleInputName1">Nama User</label>
