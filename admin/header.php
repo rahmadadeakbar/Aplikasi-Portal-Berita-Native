@@ -236,9 +236,6 @@ if ($_SESSION['level'] != ("admin" || "operator" || "autor") || empty($_SESSION[
                                     </div>
                                 </div>
                             </div>
-                            <a href="posting.php" class="btn btn-success btn-block">New Post
-                                <i class="mdi mdi-plus"></i>
-                            </a>
                         </div>
                     </li>
                     <?php if ($_SESSION['level'] == 'admin') { ?>
@@ -246,6 +243,12 @@ if ($_SESSION['level'] != ("admin" || "operator" || "autor") || empty($_SESSION[
                             <a class="nav-link" href="index.php">
                                 <i class="menu-icon mdi mdi-television"></i>
                                 <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="posting.php">
+                                <i class="menu-icon mdi mdi-television"></i>
+                                <span class="menu-title">Postingan</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -284,6 +287,12 @@ if ($_SESSION['level'] != ("admin" || "operator" || "autor") || empty($_SESSION[
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="posting.php">
+                                <i class="menu-icon mdi mdi-television"></i>
+                                <span class="menu-title">Postingan</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                                 <i class="menu-icon mdi mdi-content-copy"></i>
                                 <span class="menu-title">Data Master</span>
@@ -297,30 +306,30 @@ if ($_SESSION['level'] != ("admin" || "operator" || "autor") || empty($_SESSION[
                                 </ul>
                             </div>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="biodata_user.php">
+                                <i class="menu-icon mdi mdi-backup-restore"></i>
+                                <span class="menu-title">Data Biodata User</span>
+                            </a>
+                        </li>
 
                     <?php } else if ($_SESSION['level'] == 'autor') { ?>
                         <li class="nav-item">
+                            <a class="nav-link" href="postingan_autor.php">
+                                <i class="menu-icon mdi mdi-television"></i>
+                                <span class="menu-title">Postingan</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                                 <i class="menu-icon mdi mdi-restart"></i>
-                                <span class="menu-title">User </span>
+                                <span class="menu-title">User Data </span>
                                 <i class="menu-arrow"></i>
                             </a>
                             <div class="collapse" id="auth">
                                 <ul class="nav flex-column sub-menu">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="blank-page.php"> Blank Page </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="login.php"> Login </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="register.php"> Register </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="error-404.php"> 404 </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="error-500.php"> 500 </a>
+                                        <a class="nav-link" href="biodata.php"> Biodata </a>
                                     </li>
                                 </ul>
                             </div>
