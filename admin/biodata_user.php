@@ -49,14 +49,24 @@ function tambah($koneksi)
                             </p>
 
                             <form class="forms-sample" action="" method="POST" enctype="multipart/form-data">
+
+
                                 <div class="form-group">
                                     <label for="exampleFormControlSelect1">Pilih User</label>
                                     <select class="form-control form-control-lg" id="exampleFormControlSelect1" name="id_user">
-                                        <option value="admin">Admin</option>
-                                        <option value="operator">Operator</option>
-                                        <option value="autor">Autor</option>
+                                        <?php
+
+                                        $show = mysqli_query($koneksi, "SELECT * FROM user");
+
+                                        while ($data = mysqli_fetch_array($show)) {
+
+                                        ?>
+                                            <option value="<?= $data['id_user'] ?>"><?= $data['username'] . ' - ' . $data['level'] ?></option>
+                                        <?php } ?>
+
                                     </select>
                                 </div>
+
 
                                 <div class="form-group">
                                     <label for="exampleInputName1">Nama User</label>

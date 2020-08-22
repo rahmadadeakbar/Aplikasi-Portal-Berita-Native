@@ -108,9 +108,9 @@ function tambah($koneksi)
                                                         <td><?php echo $data['judul']; ?></td>
                                                         <td><?php echo $data['tgl_release']; ?></td>
                                                         <td>
-                                                            <a href="edit_user.php?id=<?php echo $data['id_user'] ?>" class="btn btn-warning">Edit</a>
+                                                            <a href="postingan_autor.php?aksi=update&id=<?php echo $data['id_postingan'] ?>" class="btn btn-warning">Edit</a>
                                                             <a href="" class="btn btn-info">View</a>
-                                                            <a href="proses/proses_hapus.php?id=<?php echo $data['id_user'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')" class="btn btn-danger">Hapus</a>
+                                                            <a href="postingan_autor.php?aksi=delete&id=<?php echo $data['id_postingan'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')" class="btn btn-danger">Hapus</a>
                                                         </td>
                                                     </tr>
                                             <?php
@@ -139,8 +139,32 @@ function tambah($koneksi)
         </footer>
         <!-- partial -->
     </div>
-<?php }
-            } ?>
+<?php
+                }
+            }
+?>
+
+<!-- function delete -->
+<?php
+function hapus($koneksi)
+{
+    if (isset($_GET['id']) && isset($_GET['aksi'])) {
+        $id = $_GET['id'];
+
+        $query_hapus = mysqli_query($koneksi, "DELETE FROM postingan WHERE id_postingan='$id'");
+        if ($query_hapus) {
+            if ($_GET['aksi'] == 'delete') {
+                echo '<script>alert("Data Berhasil dihapus")
+          window.location.href="postingan_autor.php";
+        </script>';
+            }
+        } else {
+            echo '<script>alert("data gagal di hapus")</script>';
+        }
+    }
+}
+?>
+
 <?php
 
 // logika proses aksinya
