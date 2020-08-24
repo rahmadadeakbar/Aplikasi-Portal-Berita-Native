@@ -30,6 +30,8 @@ if ($_SESSION['level'] != ("admin" || "operator" || "autor") || empty($_SESSION[
     <link rel="stylesheet" href="vendors/summernote/dist/summernote.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon.png" />
+    <!-- sweetalert -->
+    <link rel="stylesheet" href="vendors/sweetalert/dist/sweetalert.css">
     <style>
         .navbar.default-layout .navbar-brand-wrapper .navbar-brand {
             color: #163f73;

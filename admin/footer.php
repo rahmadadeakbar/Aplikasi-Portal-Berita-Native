@@ -11,6 +11,8 @@
 <script src="vendors/js/vendor.bundle.addons.js"></script>
 <!-- datatables -->
 <script type="text/javascript" src="vendors/datatables/DataTables/js/jquery.dataTables.js"></script>
+<!-- switalert -->
+<script src="vendors/sweetalert/dist/sweetalert.js"></script>
 <!-- endinject -->
 <!-- Plugin js for this page-->
 <!-- End plugin js for this page-->

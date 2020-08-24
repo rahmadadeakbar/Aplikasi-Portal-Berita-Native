@@ -13,13 +13,21 @@ function tambah($koneksi)
         $alamat = $_POST['alamat'];
 
         $foto = $_FILES["foto"]["name"];
-        if (move_uploaded_file($_FILES['foto']['tmp_name'], "upload/biodata/" . $_FILES['foto']['name'])) {
-            echo "Gambar Berhasil di upload";
+        $format = explode(".", $foto);
+        $fileExtension = end($format);
+        $nama_sementara = $_FILES['foto']['tmp_name'];
+        $md5file = md5($foto) . "." . $fileExtension;
+        $lokasi_upload = "upload/biodata/";
+        $fungsi_upload = move_uploaded_file($nama_sementara, $lokasi_upload . $md5file);
+        if ($fungsi_upload) {
+            echo '';
         } else {
-            echo "Gambar Gagal diupload";
+            echo '<script>alert("gagal di upload")</script>';
         }
 
-        $query_input = mysqli_query($koneksi, "INSERT INTO biodata VALUES(md5('$id'),'$nama','$tanggal','$tpt_lahir','$jk','$alamat','$foto','$id_user')");
+
+
+        $query_input = mysqli_query($koneksi, "INSERT INTO biodata VALUES(md5('$id'),'$nama','$tanggal','$tpt_lahir','$jk','$alamat','$md5file','$id_user')");
 
         if ($query_input) {
             echo '<script>alert("data berhasil di input")
@@ -149,7 +157,7 @@ function tambah($koneksi)
 
                                                     <td>
                                                         <a href="biodata_user.php?aksi=update&id=<?php echo $data['id_biodata']; ?>&nama=<?php echo $data['nama_kategori']; ?>" class="btn btn-warning">Edit</a>
-                                                        <a href="biodata_user.php?aksi=delete&id=<?php echo $data['id_biodata']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')" class="btn btn-danger">Hapus</a>
+                                                        <a href="biodata_user.php?aksi=delete&id=<?php echo $data['id_biodata']; ?>" class=" btn btn-danger delete-link">Hapus</a>
                                                     </td>
                                                 </tr>
                                             <?php
@@ -192,6 +200,12 @@ function hapus($koneksi)
 
     if (isset($_GET['id']) && isset($_GET['aksi'])) {
         $id = $_GET['id'];
+
+        $tampil = mysqli_query($koneksi, "SELECT foto FROM biodata WHERE id_biodata='$id'");
+
+        $data = mysqli_fetch_array($tampil);
+
+        unlink("upload/biodata/" . $data['foto']);
 
         $query_hapus = mysqli_query($koneksi, "DELETE FROM biodata WHERE id_biodata='$id'");
         if ($query_hapus) {
@@ -237,7 +251,30 @@ if (isset($_GET['aksi'])) {
 }
 
 ?>
+
+
 <?php include 'footer.php'; ?>
+
+<script>
+    jQuery(document).ready(function($) {
+        $('.delete-link').on('click', function() {
+            var getLink = $(this).attr('href');
+            swal({
+                title: "Are you sure?",
+                text: 'Hapus Data?',
+                type: "warning",
+                html: true,
+                confirmButtonColor: '#d9534f',
+
+                confirmButtonColor: "#DD6B55",
+                showCancelButton: true,
+            }, function() {
+                window.location.href = getLink
+            });
+            return false;
+        });
+    });
+</script>
 </body>
 
 </html>

@@ -1,8 +1,7 @@
 *.codekit
 *.sass-cache
 *.DS_STORE
+.deploy
+.sass-cache
 node_modules
-npm-debug.log
-types
-
-dist
+bower_components
