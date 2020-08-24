@@ -22,9 +22,15 @@
                 <i class="mdi mdi-cube text-danger icon-lg"></i>
               </div>
               <div class="float-right">
-                <p class="mb-0 text-right">Total Revenue</p>
+                <p class="mb-0 text-right">Total User</p>
                 <div class="fluid-container">
-                  <h3 class="font-weight-medium text-right mb-0">$65,650</h3>
+                  <?php
+                  $jumlah_user = mysqli_query($koneksi, "SELECT * FROM user");
+
+                  $jumlah = mysqli_num_rows($jumlah_user)
+
+                  ?>
+                  <h3 class="font-weight-medium text-right mb-0"><?= $jumlah ?></h3>
                 </div>
               </div>
             </div>
@@ -42,9 +48,15 @@
                 <i class="mdi mdi-receipt text-warning icon-lg"></i>
               </div>
               <div class="float-right">
-                <p class="mb-0 text-right">Orders</p>
+                <p class="mb-0 text-right">Jumlah Biodata</p>
                 <div class="fluid-container">
-                  <h3 class="font-weight-medium text-right mb-0">3455</h3>
+                  <?php
+                  $jumlah_biodata = mysqli_query($koneksi, "SELECT * FROM biodata");
+
+                  $jumlah = mysqli_num_rows($jumlah_biodata);
+
+                  ?>
+                  <h3 class="font-weight-medium text-right mb-0"><?= $jumlah ?></h3>
                 </div>
               </div>
             </div>
