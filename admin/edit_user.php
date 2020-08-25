@@ -34,10 +34,17 @@
                                 <label for="exampleInputName1">Username</label>
                                 <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="username" value="<?php echo $data['username']; ?>" required>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputName1">Password</label>
-                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Password" value="<?php echo $data['password']; ?>" name="password" required>
-                            </div>
+                            <?php if (!empty($data['password'])) { ?>
+
+                                <button class="btn btn-success" onclick="gantiPass()">Ganti Pasword</button>
+                                <div id="gantipass"></div>
+                            <?php } else { ?>
+                                <div class="form-group">
+                                    <label for="exampleInputName1">Password</label>
+                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Password" name="password" required>
+                                </div>
+                            <?php } ?>
+
                             <div class="form-group">
                                 <label for="exampleInputEmail3">Email</label>
                                 <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" name="email" value="<?php echo $data['email']; ?>" required>
@@ -89,6 +96,19 @@
     <!-- partial -->
 </div>
 <?php include 'footer.php' ?>
+
+<script>
+    function gantiPass() {
+
+        document.getElementById('gantipass')
+            .innerHTML +=
+            '<div class="form-group">\
+                <label for="exampleInputName1">Password</label>\
+                <input type="text" class="form-control" id="exampleInputName1" placeholder="Password" name="password" required>\
+            </div>'
+
+    }
+</script>
 
 </body>
 
