@@ -4,11 +4,11 @@ include 'koneksi.php';
 
 if (isset($_POST['login'])) {
 
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = md5($_POST['pass']);
 
     // query menampilkan username dan password
-    $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' AND password='$password'");
+    $query = mysqli_query($koneksi, "SELECT * FROM user WHERE email='$email' AND password='$password'");
     $cek = mysqli_num_rows($query);
     $data = mysqli_fetch_assoc($query);
 

@@ -31,7 +31,7 @@
                 <div class="form-group">
                   <label class="label">Username</label>
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Username" name="username" required>
+                    <input type="email" class="form-control" placeholder="Username" name="email" required>
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
