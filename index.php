@@ -10,7 +10,7 @@
 			<span class="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
 
 				<?php
-				$show = mysqli_query($koneksi, "SELECT * FROM postingan");
+				$show = mysqli_query($koneksi, "SELECT * FROM postingan LIMIT 10");
 
 				while ($data = mysqli_fetch_array($show)) {
 					# code...
@@ -190,7 +190,7 @@
 							<div class="tab-pane fade show active" id="tab1-1" role="tabpanel">
 								<div class="row">
 									<?php
-									$show_entertaiment = mysqli_query($koneksi, "SELECT * FROM postingan p LEFT JOIN kategori k USING(id_kategori)");
+									$show_entertaiment = mysqli_query($koneksi, "SELECT * FROM postingan p LEFT JOIN kategori k USING(id_kategori) ORDER BY tgl_release DESC LIMIT 3");
 									while ($data = mysqli_fetch_array($show_entertaiment)) {
 									?>
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
