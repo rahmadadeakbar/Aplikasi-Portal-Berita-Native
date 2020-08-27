@@ -1,4 +1,8 @@
-<?php include 'header.php'; ?>
+<?php
+
+use Mpdf\Mpdf;
+
+include 'header.php'; ?>
 
 <?php
 function tambah($koneksi)
@@ -45,55 +49,63 @@ function tambah($koneksi)
     <div class="main-panel">
         <div class="content-wrapper">
             <div class="row">
+                <?php
+                $id_user = $_SESSION['id_user'];
 
-                <div class="col-md-12 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Form Data User</h4>
-                            <p class="card-description">
-                                Masukkan Data User
-                            </p>
+                $show = mysqli_query($koneksi, "SELECT * FROM biodata WHERE id_user='$id_user'");
+                $data = mysqli_fetch_array($show);
+                if (empty($data['id_biodata'])) {
+                ?>
+                    <div class="col-md-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Form Data User</h4>
+                                <p class="card-description">
+                                    Masukkan Data User
+                                </p>
 
-                            <form class="forms-sample" action="" method="POST" enctype="multipart/form-data">
-
-
-                                <div class="form-group">
-                                    <label for="exampleInputName1">Nama User</label>
-                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="nama_user" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputName1">Tempat Lahir</label>
-                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="tempat_lahir" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputName1">Tanggal Lahir</label>
-                                    <input type="date" class="form-control" id="exampleInputName1" placeholder="Name" name="tgl_lahir" value="" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputName1">Laki-Laki</label>
-                                    <input type="radio" class="form-control" id="exampleInputName1" placeholder="Name" name="jenis_kelamin" value="Laki-Laki" required>
-                                    <label for="exampleInputName1">Perempuan</label>
-                                    <input type="radio" class="form-control" id="exampleInputName1" placeholder="Name" name="jenis_kelamin" value="perempuan" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputName1">Alamat</label>
-                                    <textarea name="alamat" id="" class="form-control"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleInputName1">Foto</label>
-                                    <input type="file" name="foto" class="form-control">
-                                </div>
+                                <form class="forms-sample" action="" method="POST" enctype="multipart/form-data">
 
 
-                                <button type="submit" class="btn btn-success mr-2" type="submit" name="input_biodata">Submit</button>
-                                <button class="btn btn-light" type="reset">Reset</button>
-                            </form>
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Nama User</label>
+                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="nama_user" value="" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Tempat Lahir</label>
+                                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="tempat_lahir" value="" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Tanggal Lahir</label>
+                                        <input type="date" class="form-control" id="exampleInputName1" placeholder="Name" name="tgl_lahir" value="" required>
+                                    </div>
 
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Laki-Laki</label>
+                                        <input type="radio" class="form-control" id="exampleInputName1" placeholder="Name" name="jenis_kelamin" value="Laki-Laki" required>
+                                        <label for="exampleInputName1">Perempuan</label>
+                                        <input type="radio" class="form-control" id="exampleInputName1" placeholder="Name" name="jenis_kelamin" value="perempuan" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Alamat</label>
+                                        <textarea name="alamat" id="" class="form-control"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputName1">Foto</label>
+                                        <input type="file" name="foto" class="form-control">
+                                    </div>
+
+
+                                    <button type="submit" class="btn btn-success mr-2" type="submit" name="input_biodata">Submit</button>
+                                    <button class="btn btn-light" type="reset">Reset</button>
+                                </form>
+
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } else {
+                } ?>
 
                 <!-- function menampilkan data di table -->
                 <?php
@@ -141,6 +153,8 @@ function tambah($koneksi)
                                                         <a href="biodata.php?aksi=update&id=<?php echo $data['id_biodata']; ?>&nama=<?php echo $data['nama']; ?>&tanggal=<?php echo $data['tanggal_lahir']; ?>&tempat=<?php echo $data['tempat_lahir']; ?>&jk=<?php echo $data['jenis_kelamin']; ?>&alamat=<?php echo $data['alamat']; ?>&id_user=<?php echo $data['id_user'] ?>" class="btn btn-warning">Edit</a>
 
                                                         <a href="biodata.php?aksi=delete&id=<?php echo $data['id_biodata']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')" class="btn btn-danger">Hapus</a>
+
+                                                        <a href="cetak.php?id=<?php echo $data['id_biodata']; ?>" class="btn btn-danger">Cetak</a>
                                                     </td>
                                                 </tr>
                                             <?php
@@ -287,9 +301,6 @@ function ubah($koneksi)
 ?>
 
 
-
-
-
 <?php
 function hapus($koneksi)
 {
@@ -317,6 +328,8 @@ function hapus($koneksi)
 }
 ?>
 
+
+
 <?php
 
 // logika proses aksinya
@@ -336,6 +349,7 @@ if (isset($_GET['aksi'])) {
         case "delete":
             hapus($koneksi);
             break;
+
         default:
             echo "<h3>Aksi <i>" . $_GET['aksi'] . "</i> tidak ada!</h3>";
             tambah($koneksi);
