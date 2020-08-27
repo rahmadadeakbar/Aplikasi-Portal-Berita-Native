@@ -154,7 +154,7 @@ function tambah($koneksi)
 
                                                         <a href="biodata.php?aksi=delete&id=<?php echo $data['id_biodata']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')" class="btn btn-danger">Hapus</a>
 
-                                                        <a href="cetak.php?id=<?php echo $data['id_biodata']; ?>" class="btn btn-danger">Cetak</a>
+                                                        <a href="cetak.php?id=<?php echo $data['id_biodata']; ?>" class="btn btn-success">Cetak</a>
                                                     </td>
                                                 </tr>
                                             <?php

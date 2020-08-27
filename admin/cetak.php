@@ -15,6 +15,7 @@ while ($data = mysqli_fetch_array($cetak)) {
                 <th>Nama</th>
                 <th>Alamat</th>
                 <th>Jenis kelamin</th>
+                <th>Foto</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,7 @@ while ($data = mysqli_fetch_array($cetak)) {
                 <td scope="row">' . $data["nama"] . '</td>
                 <td>' . $data["alamat"] . '</td>
                 <td>' . $data["jenis_kelamin"] . '</td>
+                <td><img src="upload/biodata/' . $data["foto"] . '"></td>
             </tr>
         </tbody>
     </table>
