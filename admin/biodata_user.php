@@ -25,8 +25,6 @@ function tambah($koneksi)
             echo '<script>alert("gagal di upload")</script>';
         }
 
-
-
         $query_input = mysqli_query($koneksi, "INSERT INTO biodata VALUES(md5('$id'),'$nama','$tanggal','$tpt_lahir','$jk','$alamat','$md5file','$id_user')");
 
         if ($query_input) {
@@ -37,7 +35,7 @@ function tambah($koneksi)
           </script>';
         } else {
             echo '<script>alert("data gagal di input")
-            window.location.href="kategori.php";
+            window.location.href="biodata_user.php";
           </script>';
         }
     }
@@ -190,8 +188,11 @@ function tambah($koneksi)
         <!-- partial -->
     </div>
 
-<?php }
-            } ?>
+<?php
+                }
+            }
+
+?>
 
 
 <?php

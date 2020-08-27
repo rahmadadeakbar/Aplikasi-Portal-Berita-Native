@@ -202,7 +202,7 @@
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="blog-detail-01.php?judul=<?php echo $data['id_postingan'] ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															<?= $data['judul'] ?>
 														</a>
 													</h5>

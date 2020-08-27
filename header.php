@@ -56,17 +56,17 @@
                             Contact
                         </a>
 
-                        <a href="#" class="left-topbar-item">
+                        <a href="admin/register.php" class="left-topbar-item">
                             Sing up
                         </a>
 
-                        <a href="#" class="left-topbar-item">
+                        <a href="admin/login.php" class="left-topbar-item">
                             Log in
                         </a>
                     </div>
 
                     <div class="right-topbar">
-                        <a href="#">
+                        <a target="blank" href="https://www.facebook.com/rahmadade.akbar">
                             <span class="fab fa-facebook-f"></span>
                         </a>
 
@@ -82,7 +82,7 @@
                             <span class="fab fa-vimeo-v"></span>
                         </a>
 
-                        <a href="#">
+                        <a target="blank" href="https://www.youtube.com/channel/UCxZtGfrf3d4gkX3F7xvw4hw">
                             <span class="fab fa-youtube"></span>
                         </a>
                     </div>
@@ -93,7 +93,7 @@
             <div class="wrap-header-mobile">
                 <!-- Logo moblie -->
                 <div class="logo-mobile">
-                    <a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+                    <a href="index.php"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
                 </div>
 
                 <!-- Button show menu -->
@@ -225,7 +225,7 @@
             <div class="wrap-logo container">
                 <!-- Logo desktop -->
                 <div class="logo">
-                    <a href="index.html"><img src="images/icons/logo-01.png" alt="LOGO"></a>
+                    <a href="index.php"><img src="images/icons/logo-01.png" alt="LOGO"></a>
                 </div>
 
                 <!-- Banner -->

@@ -9,16 +9,22 @@ function tambah($koneksi)
         $judul = $_POST['judul'];
         $konten = $_POST['konten'];
         $tanggal = $_POST['tanggal'];
+        $id_kategori = $_POST['id_kategori'];
 
-        $foto = $_FILES['foto']['name'];
-
-        if (move_uploaded_file($_FILES['foto']['tmp_name'], "upload/postingan/" . $_FILES['foto']['name'])) {
-            echo "Gambar Berhasil diupload";
+        $foto = $_FILES["foto"]["name"];
+        $format = explode(".", $foto);
+        $fileExtension = end($format);
+        $nama_sementara = $_FILES['foto']['tmp_name'];
+        $md5file = md5($foto) . "." . $fileExtension;
+        $lokasi_upload = "upload/postingan/";
+        $fungsi_upload = move_uploaded_file($nama_sementara, $lokasi_upload . $md5file);
+        if ($fungsi_upload) {
+            echo '';
         } else {
-            echo "Gambar Gagal di upload";
+            echo '<script>alert("gagal di upload")</script>';
         }
 
-        $query_input = mysqli_query($koneksi, "INSERT INTO postingan VALUES(md5('$id'),'$judul','$konten','$tanggal','$foto','$id_user')");
+        $query_input = mysqli_query($koneksi, "INSERT INTO postingan VALUES(md5('$id'),'$judul','$konten','$tanggal','$md5file','$id_user','$id_kategori')");
 
         if ($query_input) {
             echo '<script>alert("data berhasil di input")
@@ -53,6 +59,22 @@ function tambah($koneksi)
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Tanggal Release</label>
                                     <input type="date" class="form-control" id="exampleInputEmail3" placeholder="Tanggal" name="tanggal" value="" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Pilih Kategori</label>
+                                    <select class="form-control form-control-lg" id="exampleFormControlSelect1" name="id_kategori">
+                                        <?php
+
+                                        $show = mysqli_query($koneksi, "SELECT * FROM kategori k LEFT JOIN postingan p USING(id_kategori) ");
+
+                                        while ($data = mysqli_fetch_array($show)) {
+
+                                        ?>
+                                            <option value="<?= $data['id_kategori'] ?>"><?= $data['nama_kategori'] ?></option>
+                                        <?php } ?>
+
+                                    </select>
                                 </div>
 
                                 <div class="form-group">

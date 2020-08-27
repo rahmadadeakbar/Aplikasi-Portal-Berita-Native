@@ -125,7 +125,7 @@ function tambah($koneksi)
                                                         <td><?php echo $data['judul']; ?></td>
                                                         <td><?php echo $data['tgl_release']; ?></td>
                                                         <td>
-                                                            <a href="posting.php?id=<?php echo $data['id_user'] ?>" class="btn btn-warning">Edit</a>
+                                                            <a href="posting.php?aksi=update&id=<?php echo $data['id_postingan'] ?>&" class="btn btn-warning">Edit</a>
                                                             <a href="" class="btn btn-info">View</a>
                                                             <a href="posting.php?aksi=delete&id=<?php echo $data['id_postingan'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')" class="btn btn-danger">Hapus</a>
                                                         </td>
